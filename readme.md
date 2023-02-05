@@ -27,3 +27,61 @@ mongo "sales" -u "admin" -p "123456" --host <host> --port <port>
 ## Executar o compose
 
 ```docker-compose up --build```
+
+## Instalar o yarn
+
+```npm install --global yarn```
+
+Iniciar o projeto
+
+```yarn init -y```
+
+Adicionando dependências do projeto de autenticação (auth-api)
+
+```yarn add express```
+```yarn add cors```
+```yarn add jsonwebtoken```
+
+Nodemon como dependência de desenvolvimento para a cada alteração no código reiniciar o servidor. Utilizada apenas em desenvolvimento.
+
+```yarn add nodemon -D```
+
+Adicionando dependências do projeto de produtos (product-api)
+Acessar: https://start.spring.io/
+Adicionar as dependências:
+* DevTools;
+* Lombok;
+* Data JPA;
+* PostGreSQL Drive;
+* RabbitMQ;
+* OpenFeign.
+
+Adicionando dependências do projeto de vendas (sales-api)
+
+```yarn add express```
+```yarn add cors```
+```yarn add jsonwebtoken```
+```yarn add mongoose```
+
+```yarn add nodemon -D```
+
+## Criação das imagens das apis em node
+
+auth-api
+
+```docker image build -t auth-api```
+```docker run --name auth-api -p 8080:8080 auth-api```
+
+sales-api
+
+```docker image build -t sales-api .```
+```docker run --name sales-api -e PORT=8082 -p 8082:8082 sales-api```
+
+product-api
+
+```docker image build -t product-api .```
+```docker run --name product-api -p 8081:8081 product-api```
+
+Subir o compose
+
+```docker compose up --build```
