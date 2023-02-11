@@ -85,3 +85,17 @@ product-api
 Subir o compose
 
 ```docker compose up --build```
+
+# Auth-api
+
+Instalar a lib do sequelize
+
+```yarn add sequelize```
+
+Instalar a lib do postgresSQL
+
+```yarn add pg```
+
+Instalar a lib do bcrypt para criptografar a senha
+
+```yarn add bcrypt```
